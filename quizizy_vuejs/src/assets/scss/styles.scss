@@ -1,0 +1,364 @@
+// link Google font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import 'var';
+@import 'extend';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+//Background page
+.bg_image {
+    /* The image used */
+    background-image: url("../img/22033.jpg");
+
+    /* Full height */
+    height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//All btn
+button{
+    @extend %btn;
+    padding: 12px 20px;
+    &.quit{
+        color: $color-primary;
+        background-color: $color-white;
+        border: 1px solid $color-primary;
+        &:hover{
+            background-color: $color-danger;
+            color: $color-white;
+            border: none;
+        }
+    }
+    &.continue{
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+// btn_start
+.btn_start{
+    display: block;
+    @extend %center-elements;
+    display: flex;
+    flex-direction: column;
+    @extend %animation;
+    //logo
+    .logo_image_side{
+        width: 300px;
+    }
+    // Start Quize Stayling
+    button{
+        @extend %shadow;
+        font-size: 20px;
+        color: $color-white;
+        background: linear-gradient(to right, #4786D4, #F40051);
+    }
+    &:hover .logo_image_side{
+        filter: drop-shadow(10px 2px 20px #f91d66);
+    }
+}
+
+// box_info
+.box_info{
+    display: none;
+    @extend %shadow;
+    @extend %box-center;
+    @extend %animation;
+    // info_header
+    .info_header{
+        display: flex;
+        width: 100%;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        border-bottom: 1px solid $border-solid;
+    }
+    // info_body
+    .info_body{
+        padding: 15px 30px;
+        .info{
+            margin: 20px 0;
+            font-size: 17px;
+            span{
+                font-weight: 600;
+                color: $color-primary;
+            }
+        }
+    }
+    // info_footer
+    .info_footer{
+        display: flex;
+        justify-content: flex-end;
+        height: 60px;
+        align-items: center;
+        padding: 0 35px;
+        border-top: 1px solid $border-solid;
+    }
+}
+
+// User
+.box_user{
+    display: none;
+    @extend %shadow;
+    @extend %animation;
+    .user{
+        @extend %box-center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px 10px;
+    }
+    .user_body{
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        label{
+            font-weight: 700;
+        }
+        input{
+            margin: 10px 0;
+            padding: 10px 10px;
+            border-radius: 5px;
+            border: 1px solid $border-solid;
+            background-color: $color-primary-25;
+            outline: none;
+        }
+    }
+}
+
+// Quiz
+.box_quiz{
+    display: none;
+    @extend %box-center;
+    @extend %shadow;
+    @extend %animation;
+    width: 60%;
+    .quiz_header{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $border-solid;
+        padding: 15px 20px;
+        box-shadow: 0px 15px 20px -18px rgba(66, 68, 90, 1);
+        .time{
+            background-color: $color-primary;
+            color: $color-white;
+            padding: 12px 15px;
+            border-radius: 5px;
+            .text_time{
+                font-weight: 600;
+            }
+            .count{
+                padding: 5px;
+                border-radius: 5px;
+                font-weight: 600;
+                background-color: $color-danger;
+                margin-left: 5px;
+            }
+        }
+
+    }
+    .quiz_body{
+        padding: 16px 20px;
+        .title{
+            margin: 15px;
+        }
+        .questions{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            div{
+                width: 100%;
+                .question{
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px;
+                    margin: 15px 0;
+                    background-color: $color-primary-25;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    height: 80px;
+                    &:hover{
+                        background-color: $color-primary;
+                        color: $color-white;
+                        //animation
+                        animation: pulse; 
+                        animation-duration: 0.5s;
+                    }
+                    &.selected{
+                        background-color: $color-primary;
+                        color: $color-white;
+                    }
+                    .good{
+                        color: $color-white;
+                        font-weight: bold;
+                        font-size: 25px;
+                    }
+                    .faild{
+                        color: $color-white;
+                        font-weight: bold;
+                        font-size: 25px;
+                    }
+                    &.disabled{
+                        pointer-events: none;
+                    }
+                    &.correct{
+                        background-color: $color-success;
+                        color: $color-white;
+                    }
+                    &.incorrect{
+                        background-color: $color-danger;
+                        color: $color-white;
+                    }
+                }
+            }
+            }
+            
+    }
+    .quiz_footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 25px;
+        span{
+            font-weight: 800;
+        }
+        .next{
+            background-color: $color-primary;
+            color: $color-white;
+            &[disabled]{
+                background-color: $color-primary-25;
+                color: $color-dark;
+                font-weight: 600;
+            }
+        }
+        .submit{
+            background-color: $color-success;
+            color: $color-white;
+            &[disabled]{
+                background-color: $color-primary-25;
+                color: $color-dark;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// resultat
+.box_resultat{
+    display: none;
+    @extend %box-center;
+    @extend %shadow;
+    @extend %animation;
+    text-align: center;
+    font-size: 30px;
+    .resultat_header{
+        font-size: 120px;
+        color: $color-warning;
+    }
+    .resultat_body{
+        .score{
+            span{
+                font-weight: 800;
+            }
+        } 
+    }
+    .resultat_footer{
+        margin: 20px 0; 
+    }
+}
+
+//answers
+.box_answers{
+    display: none;
+    @extend %center-elements;
+    @extend %shadow;
+    @extend %animation;
+    width: 500px;
+    background-color: $color-white;
+    .answers_header{
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0px 15px 20px -18px rgba(66, 68, 90, 1);
+    }
+    .answers_body{
+        padding: 20px 15px;
+        height: 450px;
+        overflow: auto;
+        .answer{
+            background-color: $color-success;
+            @extend %answers;
+            margin: 0 0 12px 0;
+        }
+        .your_answer{
+            background-color: $color-danger;
+            @extend %answers;
+            margin: 0 0 12px 0;
+        }
+        .explication{
+            background-color: $color-warning;
+            @extend %answers;
+            margin: 0 0 12px 0;
+        }
+        .row{
+            .col{
+                @extend %shadow;
+                border: 1px solid $color-dark;
+                padding: 12px;
+                margin: 15px 0;
+            }
+        }
+        hr{
+            width: 25%;
+            margin: 8px auto;
+        }
+    }
+    .answers_footer{
+        text-align: center;
+        margin: 20px;
+    }
+}
+
+//media query
+
+@media #{$media-mobile} {
+    .box_info{
+        width: 95%;
+    }
+    .box_user{
+        .user{
+            width: 95%;
+        }  
+    }
+    .box_quiz{
+        width: 95%;
+        .quiz_body{
+            .questions{
+                display: block;
+            }
+        }
+    }
+    .box_resultat{
+        width: 95%;
+    }
+    .box_answers{
+        width: 95%;
+    }
+}
+  

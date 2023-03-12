@@ -1,0 +1,38 @@
+//For extend
+%center-elements{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+%box-center{
+    @extend %center-elements;
+    width: 540px;
+    background-color: $color-white;
+    border-radius: 5px;
+}
+%btn{
+    margin: 0 5px;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+%shadow{
+    box-shadow: -4px 6px 50px -8px rgba(255, 255, 255, 0.8);
+}
+// Answers
+%answers{
+    color: $color-white;
+    font-weight: 600;
+    padding: 20px 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+// animation
+%animation{
+    animation: fadeIn; 
+    animation-duration: 0.8s;
+}
