@@ -14,11 +14,11 @@
                     workloads?</h2> -->
             </div>
             <div class="questions">
-                <!-- <div>
-                        <div class="question">
+                <div>
+                        <div class="question correct">
                             <p>Amazon EC2 costs are billed on a monthly basis.</p><i class="fa-regular fa-circle-check good"></i>
                         </div>
-                        <div class="question">
+                        <div class="question incorrect">
                             <p>Users retain full administrative access to their Amazon EC2 instances.</p><i class="fa-regular fa-circle-xmark faild"></i>
                         </div>
                     </div>
@@ -29,11 +29,11 @@
                         <div class="question">
                             <p>Users can permanently run enough instances to handle peak workloads.</p>
                         </div>
-                    </div> -->
+                    </div>
             </div>
         </div>
         <div class="quiz_footer">
-            <p><span class="step"></span> of <span class="all"></span> Questions</p>
+            <p><span class="step">1</span> of <span class="all">10</span> Questions</p>
             <div>
                 <button class="submit">Submit</button>
                 <button class="next">Next</button>

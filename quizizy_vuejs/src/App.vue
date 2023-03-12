@@ -2,7 +2,7 @@
   <main>
     <!-- Background image -->
     <div class="bg_image"></div>
-    <StartQuiz />
+    <Quiz />
     <!-- <InfoQuiz /> -->
   </main>
 </template>

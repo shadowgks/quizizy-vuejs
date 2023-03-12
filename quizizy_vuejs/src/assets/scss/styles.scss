@@ -46,6 +46,7 @@ button{
 
 // btn_start
 .btn_start{
+    display: block;
     @extend %center-elements;
     display: flex;
     flex-direction: column;
@@ -245,13 +246,13 @@ button{
             }
         }
         .submit{
-            background-color: $color-success;
+            background-color: $color-danger;
             color: $color-white;
-            &[disabled]{
-                background-color: $color-primary-25;
-                color: $color-dark;
-                font-weight: 600;
-            }
+            // &[disabled]{
+            //     background-color: $color-primary-25;
+            //     color: $color-dark;
+            //     font-weight: 600;
+            // }
         }
     }
 }
@@ -281,7 +282,6 @@ button{
 
 //answers
 .box_answers{
-    display: none;
     @extend %center-elements;
     @extend %shadow;
     @extend %animation;
@@ -356,4 +356,4 @@ button{
         width: 95%;
     }
 }
-  
+
