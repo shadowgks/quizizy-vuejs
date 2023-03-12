@@ -35,10 +35,8 @@ button {
 }
 
 .box_answers, .box_resultat, .box_quiz, .box_user, .box_info, .btn_start {
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
+  animation: fadeIn;
+  animation-duration: 0.8s;
 }
 
 * {
@@ -78,7 +76,6 @@ button.continue {
 }
 
 .btn_start {
-  display: block;
   display: flex;
   flex-direction: column;
 }
@@ -94,9 +91,6 @@ button.continue {
   filter: drop-shadow(10px 2px 20px #f91d66);
 }
 
-.box_info {
-  display: none;
-}
 .box_info .info_header {
   display: flex;
   width: 100%;
@@ -126,9 +120,6 @@ button.continue {
   border-top: 1px solid #d3d3d3;
 }
 
-.box_user {
-  display: none;
-}
 .box_user .user {
   display: flex;
   flex-direction: column;
@@ -156,7 +147,6 @@ button.continue {
 }
 
 .box_quiz {
-  display: none;
   width: 60%;
 }
 .box_quiz .quiz_header {
@@ -213,10 +203,8 @@ button.continue {
 .box_quiz .quiz_body .questions div .question:hover {
   background-color: #3F0071;
   color: #fff;
-  -webkit-animation: pulse;
-          animation: pulse;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  animation: pulse;
+  animation-duration: 0.5s;
 }
 .box_quiz .quiz_body .questions div .question.selected {
   background-color: #3F0071;
@@ -272,7 +260,6 @@ button.continue {
 }
 
 .box_resultat {
-  display: none;
   text-align: center;
   font-size: 30px;
 }

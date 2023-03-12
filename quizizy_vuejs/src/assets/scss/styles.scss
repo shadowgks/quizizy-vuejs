@@ -46,7 +46,6 @@ button{
 
 // btn_start
 .btn_start{
-    display: block;
     @extend %center-elements;
     display: flex;
     flex-direction: column;
@@ -69,7 +68,6 @@ button{
 
 // box_info
 .box_info{
-    display: none;
     @extend %shadow;
     @extend %box-center;
     @extend %animation;
@@ -108,7 +106,6 @@ button{
 
 // User
 .box_user{
-    display: none;
     @extend %shadow;
     @extend %animation;
     .user{
@@ -141,7 +138,6 @@ button{
 
 // Quiz
 .box_quiz{
-    display: none;
     @extend %box-center;
     @extend %shadow;
     @extend %animation;
@@ -262,7 +258,6 @@ button{
 
 // resultat
 .box_resultat{
-    display: none;
     @extend %box-center;
     @extend %shadow;
     @extend %animation;
