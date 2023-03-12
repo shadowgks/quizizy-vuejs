@@ -2,6 +2,7 @@
   <main>
     <!-- Background image -->
     <div class="bg_image"></div>
+    {{data}}
     <Quiz />
     <!-- <InfoQuiz /> -->
   </main>
@@ -19,7 +20,9 @@ import User from './components/User.vue';
 export default {
   components: {StartQuiz,InfoQuiz,Resultat,Answers,Quiz,User},
   data(){
-
+    return{
+      
+    }
   },
   methods: {
     

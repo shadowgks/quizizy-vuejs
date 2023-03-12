@@ -1,6 +1,19 @@
+<script>
+    import data from "../assets/js/data/newData.json";
+export default {
+    components: {data},
+    data(){
+        return{
+            myJson: data
+        }
+    }
+}
+</script>
+
 <template>
     <!-- quiz -->
     <div class="box_quiz">
+        <!-- {{myJson[0]['answer'][0]}} -->
         <div class="quiz_header">
             <h3>Quiz of AWS</h3>
             <div class="time">
@@ -21,15 +34,13 @@
                         <div class="question incorrect">
                             <p>Users retain full administrative access to their Amazon EC2 instances.</p><i class="fa-regular fa-circle-xmark faild"></i>
                         </div>
-                    </div>
-                    <div>
                         <div class="question">
                             <p>Amazon EC2 instances can be launched on demand when needed.</p>
                         </div>
                         <div class="question">
                             <p>Users can permanently run enough instances to handle peak workloads.</p>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="quiz_footer">
@@ -41,11 +52,5 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style></style>
