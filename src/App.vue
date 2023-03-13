@@ -2,9 +2,11 @@
   <main>
     <!-- Background image -->
     <div class="bg_image"></div>
-    {{data}}
-    <Quiz />
-    <!-- <InfoQuiz /> -->
+    <Quiz 
+    :questions="myJson[current_question]" 
+    :currentIndex="current_question" 
+    :lenght_data="myJson.length" 
+    @onAnswerSelected="answerSelected"/>
   </main>
 </template>
 
@@ -17,15 +19,22 @@ import StartQuiz from './components/StartQuiz.vue';
 import Quiz from './components/Quiz.vue';
 import User from './components/User.vue';
 
+// data
+import data from "./assets/js/data/newData.json";
+
 export default {
-  components: {StartQuiz,InfoQuiz,Resultat,Answers,Quiz,User},
+  components: {StartQuiz,InfoQuiz,Resultat,Answers,Quiz,User,data},
   data(){
     return{
-      
+      myJson: data,
+      current_question : 0, //index
     }
   },
   methods: {
-    
+    answerSelected(index){
+      // alert(index);
+      this.myJson[this.current_question].selected = index;
+    }
   },
 }
 

@@ -1,19 +1,25 @@
 <script>
-    import data from "../assets/js/data/newData.json";
+    // import data from "../assets/js/data/newData.json";
 export default {
-    components: {data},
+    props : ['questions','currentIndex','lenght_data'],
+
     data(){
         return{
-            myJson: data
+            score : 0,
         }
-    }
+    },
+    methods: {
+        choseAnswer(e){
+            console.log(e);
+        }
+    },
 }
 </script>
 
 <template>
     <!-- quiz -->
     <div class="box_quiz">
-        <!-- {{myJson[0]['answer'][0]}} -->
+        <!-- {{myJson[4]['question']}} -->
         <div class="quiz_header">
             <h3>Quiz of AWS</h3>
             <div class="time">
@@ -23,31 +29,44 @@ export default {
         </div>
         <div class="quiz_body">
             <div class="title">
-                <!-- <h2>Why is AWS more economical than traditional data centers for applications with varying compute
-                    workloads?</h2> -->
+                <h2>{{questions.question}}</h2>
             </div>
             <div class="questions">
                 <div>
-                        <div class="question correct">
-                            <p>Amazon EC2 costs are billed on a monthly basis.</p><i class="fa-regular fa-circle-check good"></i>
-                        </div>
-                        <div class="question incorrect">
-                            <p>Users retain full administrative access to their Amazon EC2 instances.</p><i class="fa-regular fa-circle-xmark faild"></i>
-                        </div>
-                        <div class="question">
-                            <p>Amazon EC2 instances can be launched on demand when needed.</p>
-                        </div>
-                        <div class="question">
-                            <p>Users can permanently run enough instances to handle peak workloads.</p>
-                        </div>
+                    <!-- correct || class 
+                    <i class="fa-regular fa-circle-check good"></i>
+                    --> 
+                    <!-- incorrect || class 
+                    <i class="fa-regular fa-circle-xmark faild"></i>
+                    --> 
+                    <div 
+                    class="question" 
+                    v-on:click="$emit('onAnswerSelected', answer.isCorrect)" 
+                    v-for="(answer, index) in questions.answers" 
+                    :key="index" 
+                    @click="choseAnswer(questions.isCorrect)"
+                    :class="{'correct' : questions.selected != null && answer.isCorrect == true},
+                    {'incorrect' : questions.selected != true && answer.isCorrect == questions.selected}">
+                        <p>{{answer.choix}}</p>
+                        <!-- {{answer.isCorrect}} -->
+                    </div>
+                    <!-- <div class="question incorrect">
+                        <p>Users retain full administrative access to their Amazon EC2 instances.</p><i class="fa-regular fa-circle-xmark faild"></i>
+                    </div>
+                    <div class="question">
+                        <p>Amazon EC2 instances can be launched on demand when needed.</p>
+                    </div>
+                    <div class="question">
+                        <p>Users can permanently run enough instances to handle peak workloads.</p>
+                    </div> -->
                 </div>
             </div>
         </div>
         <div class="quiz_footer">
-            <p><span class="step">1</span> of <span class="all">10</span> Questions</p>
+            <p><span class="step">{{currentIndex+1}}</span> of <span class="all">{{lenght_data}}</span> Questions</p>
             <div>
-                <button class="submit">Submit</button>
-                <button class="next">Next</button>
+                <!-- <button class="submit">Submit</button> -->
+                <button v-show="questions.selected != null" class="next" @click="index_answer++">Next</button>
             </div>
         </div>
     </div>
