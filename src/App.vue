@@ -6,7 +6,8 @@
     :questions="myJson[current_question]" 
     :currentIndex="current_question" 
     :lenght_data="myJson.length" 
-    @onAnswerSelected="answerSelected"/>
+    @onAnswerSelected="answerSelected"
+    @onNextQuestion="current_question++"/>
   </main>
 </template>
 
@@ -32,7 +33,10 @@ export default {
   },
   methods: {
     answerSelected(index){
-      // alert(index);
+
+      if(this.myJson[this.current_question].selected != null){
+        return false;
+      }
       this.myJson[this.current_question].selected = index;
     }
   },

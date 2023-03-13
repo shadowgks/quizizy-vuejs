@@ -9,9 +9,6 @@ export default {
         }
     },
     methods: {
-        choseAnswer(e){
-            console.log(e);
-        }
     },
 }
 </script>
@@ -41,12 +38,12 @@ export default {
                     --> 
                     <div 
                     class="question" 
-                    v-on:click="$emit('onAnswerSelected', answer.isCorrect)" 
+                    @click="$emit('onAnswerSelected', index)" 
                     v-for="(answer, index) in questions.answers" 
                     :key="index" 
-                    @click="choseAnswer(questions.isCorrect)"
-                    :class="{'correct' : questions.selected != null && answer.isCorrect == true},
-                    {'incorrect' : questions.selected != true && answer.isCorrect == questions.selected}">
+                    :class="{'correct'   : questions.selected != null && index == questions.isCorrect},
+                            {'incorrect' : questions.selected != questions.isCorrect && index == questions.selected}
+                    ">
                         <p>{{answer.choix}}</p>
                         <!-- {{answer.isCorrect}} -->
                     </div>
@@ -66,7 +63,7 @@ export default {
             <p><span class="step">{{currentIndex+1}}</span> of <span class="all">{{lenght_data}}</span> Questions</p>
             <div>
                 <!-- <button class="submit">Submit</button> -->
-                <button v-show="questions.selected != null" class="next" @click="index_answer++">Next</button>
+                <button class="next" v-show="questions.selected != null" @click="$emit('onNextQuestion')">Next</button>
             </div>
         </div>
     </div>
