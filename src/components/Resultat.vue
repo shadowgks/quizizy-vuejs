@@ -1,13 +1,23 @@
 <template>
     <!-- resultat -->
     <div class="box_resultat">
+        <div class="half-arc" style="--percentage:75%;">
+  <span class="label">75%</span>
+</div>
+        <div class="container">
+            <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive" :checked="his_checked">
+
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
         <div class="resultat_header">
             <i class="fa-solid fa-ranking-star"></i>
         </div>
         <div class="resultat_body">
-            <div class="name_user">
+            <!-- <div class="name_user">
                 <h4>saad</h4>
-            </div>
+            </div> -->
             <div class="text_finish">
                 <span>Completed the Quiz!</span>
             </div>
@@ -25,6 +35,14 @@
 <script>
 export default {
     props : ['lenght_data','score'],
+    data(){
+        return{
+            his_checked: false,
+        }
+    },
+    mounted(){
+        this.his_checked = true;
+    }
 }
 </script>
 

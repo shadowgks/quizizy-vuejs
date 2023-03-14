@@ -1,6 +1,10 @@
 <template>
     <!-- quiz -->
     <div class="box_quiz">
+        <!-- progressBar -->
+        <div class="half-arc" style="--percentage:50%;">
+            <span class="label">50%</span>
+        </div>
         <div class="quiz_header">
             <h3>Quiz of AWS</h3>
             <!-- <div class="time">
@@ -46,6 +50,15 @@
 <script>
 export default {
     props : ['questions','currentIndex','lenght_data'],
+    data(){
+        return{
+            his_checked: false,
+        }
+    },
+    mounted(){
+        this.his_checked = true
+        console.log('quiz');
+    },
 }
 </script>
 

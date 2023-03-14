@@ -2,13 +2,11 @@
   <main>
     <!-- Background image -->
     <div class="bg_image"></div>
-    <StartQuiz
-      v-show="start_quiz"
-      @onBtnShowInfoQuiz="onBtnShowInfoQuiz"
-    />
+
+    <StartQuiz v-show="start_quiz" @onBtnShowInfoQuiz="onBtnShowInfoQuiz" />
     <InfoQuiz
-      v-show="model_show_infoquiz"
-      @onBtnShowUser="onBtnShowUser"
+      v-if="model_show_infoquiz"
+      @onBtnShowQuiz="onBtnShowQuiz"
       @btn_quit="btn_quit"
     />
     <Quiz
@@ -28,8 +26,8 @@
       v-if="!model_show_answers"
       @btn_quit="btn_quit"
     />
-    <Answers 
-      v-if="model_show_answers" 
+    <Answers
+      v-if="model_show_answers"
       :arrCorrectAnswers="arrCorrectAnswers"
       @btn_quit="btn_quit"
     />
@@ -51,7 +49,7 @@ export default {
   components: { StartQuiz, InfoQuiz, Resultat, Answers, Quiz, data },
   data() {
     return {
-      myJson: data.sort(()=>Math.random() - 0.5), //data json
+      myJson: data.sort(() => Math.random() - 0.5), //data json randome
       current_question: 0, //index
       score: 0,
       arrCorrectAnswers: [], //array answers selected user
@@ -81,26 +79,74 @@ export default {
     },
 
     //btns show && hide
-    btnShowAnswers() {
-      this.model_show_answers = !this.model_show_answers;
-    },
-    onBtnShowInfoQuiz(){
+    onBtnShowInfoQuiz() {
       this.start_quiz = !this.start_quiz;
       this.model_show_infoquiz = !this.model_show_infoquiz;
     },
-    onBtnShowUser(){
+    onBtnShowQuiz() {
       this.model_show_infoquiz = !this.model_show_infoquiz;
       this.model_show_quiz = !this.model_show_quiz;
     },
+    btnShowAnswers() {
+      this.model_show_answers = !this.model_show_answers;
+    },
 
     //btn reload page
-    btn_quit(){
+    btn_quit() {
       location.reload();
-    }
+    },
   },
 };
 </script>
 
 
-<style scoped>
+<style>
+.half-arc {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    border-bottom: 0;
+    background: #d9d9d9;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.half-arc:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    background-image: conic-gradient(#9c27b0, #3f51b5 calc(var(--percentage, 0) / 2), #bbb 0);
+    transition: transform .5s ease-in-out;
+    z-index: 1;
+    transform: rotate(270deg);
+}
+
+.half-arc:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #dddddd;
+    z-index: 2;
+    width: calc(100% - 32px);
+    height: calc(200% - 32px);
+    border-radius: 50%;
+    top: 16px;
+    left: 16px;
+}
+
+.half-arc span {
+    color: #673ab7;
+    z-index: 3;
+    text-align: center;
+}
 </style>

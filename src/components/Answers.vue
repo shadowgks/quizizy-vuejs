@@ -1,6 +1,10 @@
 <template>
     <!-- Answers -->
     <div class="box_answers">
+        <!-- progressBar -->
+<div class="half-arc" style="--percentage:100%;">
+  <span class="label">100%</span>
+</div>
         <div class="answers_header">
             <h1>Your Right Answers</h1>
         </div>
@@ -25,6 +29,15 @@
 <script>
 export default {
     props : ['arrCorrectAnswers'],
+    data(){
+        return{
+            his_checked: false,
+        }
+    },
+    mounted(){
+        this.his_checked = true;
+        console.log('d');
+    }
 }
 </script>
 
