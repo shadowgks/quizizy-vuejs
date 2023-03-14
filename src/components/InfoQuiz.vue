@@ -2,9 +2,34 @@
     <!-- info quiz -->
     <div class="box_info">
         <!-- progressBar -->
-        <div class="half-arc" style="--percentage:25%;">
-            <span class="label">25%</span>
+        <div class="md-stepper-horizontal orange">
+            <div class="md-step active">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title">Rules</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Quiz</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title">Score</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title">Answers</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
         </div>
+
+        
         <div class="info_header">
             <h2>Some Rules of this Quiz</h2>
         </div>

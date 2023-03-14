@@ -282,8 +282,6 @@ button.continue {
 }
 .box_answers .answers_body {
   padding: 20px 15px;
-  height: 450px;
-  overflow: auto;
 }
 .box_answers .answers_body .answer {
   background-color: #28a745;

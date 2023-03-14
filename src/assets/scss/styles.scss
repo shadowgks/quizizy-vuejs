@@ -295,8 +295,6 @@ button{
     }
     .answers_body{
         padding: 20px 15px;
-        height: 450px;
-        overflow: auto;
         .answer{
             background-color: $color-success;
             @extend %answers;
@@ -360,4 +358,5 @@ button{
         width: 95%;
     }
 }
+
 

@@ -1,14 +1,32 @@
 <template>
     <!-- resultat -->
+    <!-- resultat -->
     <div class="box_resultat">
-        <div class="half-arc" style="--percentage:75%;">
-  <span class="label">75%</span>
-</div>
-        <div class="container">
-            <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive" :checked="his_checked">
-
-            <div class="progress">
-                <div class="progress-bar"></div>
+        <!-- progressBar -->
+        <div class="md-stepper-horizontal orange">
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title">Rules</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Quiz</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title">Score</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title">Answers</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
             </div>
         </div>
         <div class="resultat_header">

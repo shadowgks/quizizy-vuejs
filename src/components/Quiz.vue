@@ -2,8 +2,31 @@
     <!-- quiz -->
     <div class="box_quiz">
         <!-- progressBar -->
-        <div class="half-arc" style="--percentage:50%;">
-            <span class="label">50%</span>
+        <div class="md-stepper-horizontal orange">
+            <div class="md-step active done">
+                <div class="md-step-circle done"><span>1</span></div>
+                <div class="md-step-title">Rules</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active editable">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Quiz</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title">Score</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title">Answers</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
         </div>
         <div class="quiz_header">
             <h3>Quiz of AWS</h3>
@@ -62,4 +85,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.box_quiz{
+    overflow-y: scroll;
+    height: 40rem;
+}
+</style>

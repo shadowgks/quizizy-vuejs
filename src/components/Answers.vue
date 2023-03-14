@@ -2,9 +2,32 @@
     <!-- Answers -->
     <div class="box_answers">
         <!-- progressBar -->
-<div class="half-arc" style="--percentage:100%;">
-  <span class="label">100%</span>
-</div>
+        <div class="md-stepper-horizontal orange">
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title">Rules</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title">Quiz</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title">Score</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step active done">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title">Answers</div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+        </div>
         <div class="answers_header">
             <h1>Your Right Answers</h1>
         </div>
@@ -49,5 +72,9 @@ export default {
     text-align: center;
     font-weight: bold;
     font-size: 22px;
+}
+.box_answers{
+    overflow-y: scroll;
+    height: 40rem;
 }
 </style>
