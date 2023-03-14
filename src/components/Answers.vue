@@ -5,10 +5,14 @@
             <h1>Your Wrong Answers</h1>
         </div>
         <div class="answers_body">
-            <!-- <h3>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h3>
-                <p class="answer">Amazon EC2 costs are billed on a monthly basis</span>
-                <p class="your_answer">Amazon EC2 instances can be launched on demand when needed</span>
-                <hr> -->
+            <div  v-for="(item,index) in correctAnswers" :key='index'>
+                <h3>{{index+1}} - {{item.question}}</h3>
+                <p class="answer">{{item.answers[item.isCorrect].choix}}</p>
+                <!-- <p class="your_answer">Amazon EC2 instances can be launched on demand when needed</p> -->
+                <p class="explication">{{item.explication}}</p>
+                <hr>
+            </div>
+
         </div>
         <div class="answers_footer">
             <button class="quit">Quit Quiz</button>
@@ -18,7 +22,7 @@
 
 <script>
 export default {
-
+    props : ['correctAnswers'],
 }
 </script>
 

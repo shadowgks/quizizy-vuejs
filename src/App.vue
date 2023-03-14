@@ -10,9 +10,17 @@
       @onNextQuestion="current_question++"
       v-if="current_question <= myJson.length - 1"
     />
-    <Resultat v-else 
-    :lenght_data="myJson.length" 
-    :score="score"/>
+    <Resultat
+      v-else
+      :lenght_data="myJson.length"
+      :score="score"
+      @onBtnShowAnswers="btnShowAnswers"
+      v-if="!model_show_answers"
+    />
+    <Answers 
+      v-if="model_show_answers" 
+      :correctAnswers="correctAnswers"
+    />
   </main>
 </template>
 
@@ -32,9 +40,11 @@ export default {
   components: { StartQuiz, InfoQuiz, Resultat, Answers, Quiz, User, data },
   data() {
     return {
-      myJson: data,
+      myJson: data, //data json
       current_question: 0, //index
       score: 0,
+      model_show_answers: false, //hide componente Show Resultat
+      correctAnswers: [], //array answers selected user
     };
   },
   methods: {
@@ -49,7 +59,13 @@ export default {
       //increment Score
       if (this.myJson[this.current_question].isCorrect == index) {
         this.score++;
+        //set ansewrs correct in array
+        this.correctAnswers.push(this.myJson[this.current_question]);
+        console.log(this.correctAnswers);
       }
+    },
+    btnShowAnswers() {
+      this.model_show_answers = true;
     },
   },
 };

@@ -1,17 +1,3 @@
-<script>
-export default {
-    props : ['questions','currentIndex','lenght_data'],
-
-    data(){
-        return{
-            score : 0
-        }
-    },
-    methods: {
-    },
-}
-</script>
-
 <template>
     <!-- quiz -->
     <div class="box_quiz">
@@ -24,7 +10,7 @@ export default {
         </div>
         <div class="quiz_body">
             <div class="title">
-                <h2>{{questions.question}}</h2>
+                <h2>{{currentIndex+1}} - {{questions.question}}</h2>
             </div>
             <div class="questions">
                 <div>
@@ -53,5 +39,11 @@ export default {
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props : ['questions','currentIndex','lenght_data'],
+}
+</script>
 
 <style></style>
