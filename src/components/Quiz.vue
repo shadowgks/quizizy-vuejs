@@ -3,10 +3,10 @@
     <div class="box_quiz">
         <div class="quiz_header">
             <h3>Quiz of AWS</h3>
-            <div class="time">
+            <!-- <div class="time">
                 <span class="text_time">Time left</span>
                 <span class="count">30</span>
-            </div>
+            </div> -->
         </div>
         <div class="quiz_body">
             <div class="title">
@@ -34,7 +34,10 @@
         <div class="quiz_footer">
             <p><span class="step">{{currentIndex+1}}</span> of <span class="all">{{lenght_data}}</span> Questions</p>
             <div>
-                <button class="next" v-show="questions.selected != null" @click="$emit('onNextQuestion')">Next</button>
+                <button 
+                class="next" 
+                v-show="questions.selected != null" 
+                @click="$emit('onNextQuestion')">Next</button>
             </div>
         </div>
     </div>

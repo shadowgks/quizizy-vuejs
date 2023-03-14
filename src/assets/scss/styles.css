@@ -154,9 +154,10 @@ button.continue {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom: 1px solid #d3d3d3;
-  padding: 15px 20px;
+  padding: 25px 20px;
+  font-size: 25px;
   box-shadow: 0px 15px 20px -18px rgb(66, 68, 90);
 }
 .box_quiz .quiz_header .time {
@@ -286,15 +287,15 @@ button.continue {
 }
 .box_answers .answers_body .answer {
   background-color: #28a745;
-  margin: 0 0 12px 0;
+  margin: 0;
 }
 .box_answers .answers_body .your_answer {
   background-color: #dc3545;
-  margin: 0 0 12px 0;
+  margin: 0;
 }
 .box_answers .answers_body .explication {
   background-color: rgba(184, 140, 5, 0.8196078431);
-  margin: 0 0 12px 0;
+  margin: 0;
 }
 .box_answers .answers_body .row .col {
   border: 1px solid #000;
@@ -304,6 +305,9 @@ button.continue {
 .box_answers .answers_body hr {
   width: 25%;
   margin: 8px auto;
+  height: 7px;
+  background-color: black;
+  border-radius: 50px;
 }
 .box_answers .answers_footer {
   text-align: center;

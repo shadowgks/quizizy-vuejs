@@ -2,6 +2,15 @@
   <main>
     <!-- Background image -->
     <div class="bg_image"></div>
+    <StartQuiz
+      v-show="start_quiz"
+      @onBtnShowInfoQuiz="onBtnShowInfoQuiz"
+    />
+    <InfoQuiz
+      v-show="model_show_infoquiz"
+      @onBtnShowUser="onBtnShowUser"
+      @btn_quit="btn_quit"
+    />
     <Quiz
       :questions="myJson[current_question]"
       :currentIndex="current_question"
@@ -9,6 +18,7 @@
       @onAnswerSelected="answerSelected"
       @onNextQuestion="current_question++"
       v-if="current_question <= myJson.length - 1"
+      v-show="model_show_quiz"
     />
     <Resultat
       v-else
@@ -16,10 +26,12 @@
       :score="score"
       @onBtnShowAnswers="btnShowAnswers"
       v-if="!model_show_answers"
+      @btn_quit="btn_quit"
     />
     <Answers 
       v-if="model_show_answers" 
       :correctAnswers="correctAnswers"
+      @btn_quit="btn_quit"
     />
   </main>
 </template>
@@ -31,20 +43,25 @@ import Resultat from "./components/Resultat.vue";
 import InfoQuiz from "./components/InfoQuiz.vue";
 import StartQuiz from "./components/StartQuiz.vue";
 import Quiz from "./components/Quiz.vue";
-import User from "./components/User.vue";
 
 // data
 import data from "./assets/js/data/newData.json";
 
 export default {
-  components: { StartQuiz, InfoQuiz, Resultat, Answers, Quiz, User, data },
+  components: { StartQuiz, InfoQuiz, Resultat, Answers, Quiz, data },
   data() {
     return {
+      name_user: 'unknown',
       myJson: data, //data json
       current_question: 0, //index
       score: 0,
-      model_show_answers: false, //hide componente Show Resultat
       correctAnswers: [], //array answers selected user
+
+      //hide components
+      start_quiz: true,
+      model_show_infoquiz: false,
+      model_show_quiz: false,
+      model_show_answers: false,
     };
   },
   methods: {
@@ -61,12 +78,26 @@ export default {
         this.score++;
         //set ansewrs correct in array
         this.correctAnswers.push(this.myJson[this.current_question]);
-        console.log(this.correctAnswers);
       }
     },
+
+    //btns show && hide
     btnShowAnswers() {
-      this.model_show_answers = true;
+      this.model_show_answers = !this.model_show_answers;
     },
+    onBtnShowInfoQuiz(){
+      this.start_quiz = !this.start_quiz;
+      this.model_show_infoquiz = !this.model_show_infoquiz;
+    },
+    onBtnShowUser(){
+      this.model_show_infoquiz = !this.model_show_infoquiz;
+      this.model_show_quiz = !this.model_show_quiz;
+    },
+
+    //btn reload page
+    btn_quit(){
+      location.reload();
+    }
   },
 };
 </script>

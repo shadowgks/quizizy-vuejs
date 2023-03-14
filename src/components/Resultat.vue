@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="resultat_footer">
-            <button class="quit">Quit Quiz</button>
+            <button class="quit" @click="$emit('btn_quit')">Quit Quiz</button>
             <button class="continue" @click="$emit('onBtnShowAnswers')">Your Ansewers</button>
         </div>
     </div>
