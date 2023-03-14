@@ -5,7 +5,7 @@
             <h1>Your Right Answers</h1>
         </div>
         <div class="answers_body">
-            <div  v-for="(item,index) in correctAnswers" :key='index'>
+            <div  v-for="(item,index) in arrCorrectAnswers" :key='index'>
                 <p class="title-question">Question</p>
                 <h3>{{index+1}} - {{item.question}}</h3>
                 <p class="title-correct-answer">Correct Answer</p>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    props : ['correctAnswers'],
+    props : ['arrCorrectAnswers'],
 }
 </script>
 

@@ -30,7 +30,7 @@
     />
     <Answers 
       v-if="model_show_answers" 
-      :correctAnswers="correctAnswers"
+      :arrCorrectAnswers="arrCorrectAnswers"
       @btn_quit="btn_quit"
     />
   </main>
@@ -51,11 +51,10 @@ export default {
   components: { StartQuiz, InfoQuiz, Resultat, Answers, Quiz, data },
   data() {
     return {
-      name_user: 'unknown',
-      myJson: data, //data json
+      myJson: data.sort(()=>Math.random() - 0.5), //data json
       current_question: 0, //index
       score: 0,
-      correctAnswers: [], //array answers selected user
+      arrCorrectAnswers: [], //array answers selected user
 
       //hide components
       start_quiz: true,
@@ -77,7 +76,7 @@ export default {
       if (this.myJson[this.current_question].isCorrect == index) {
         this.score++;
         //set ansewrs correct in array
-        this.correctAnswers.push(this.myJson[this.current_question]);
+        this.arrCorrectAnswers.push(this.myJson[this.current_question]);
       }
     },
 
