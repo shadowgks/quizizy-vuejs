@@ -35,7 +35,8 @@
                 <span class="count">30</span>
             </div> -->
         </div>
-        <div class="quiz_body">
+        <div class="scrol">
+            <div class="quiz_body">
             <div class="title">
                 <h2>{{currentIndex+1}} - {{questions.question}}</h2>
             </div>
@@ -57,6 +58,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="quiz_footer">
             <p><span class="step">{{currentIndex+1}}</span> of <span class="all">{{lenght_data}}</span> Questions</p>
@@ -86,8 +88,24 @@ export default {
 </script>
 
 <style scoped>
-.box_quiz{
+.scrol{
     overflow-y: scroll;
-    height: 40rem;
+    height: 30rem;
+}
+.scrol::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.scrol::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.scrol::-webkit-scrollbar-thumb
+{
+	background-color: #3F0071;
 }
 </style>

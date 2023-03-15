@@ -101,6 +101,7 @@ export default {
 
 
 <style>
+/* Swiper Components */
 .md-stepper-horizontal {
 	display:table;
 	width:100%;
@@ -217,4 +218,5 @@ export default {
 	right:50%;
 	margin-right:20px;
 }
+
 </style>

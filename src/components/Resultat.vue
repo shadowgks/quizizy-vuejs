@@ -33,9 +33,6 @@
             <i class="fa-solid fa-ranking-star"></i>
         </div>
         <div class="resultat_body">
-            <!-- <div class="name_user">
-                <h4>saad</h4>
-            </div> -->
             <div class="text_finish">
                 <span>Completed the Quiz!</span>
             </div>

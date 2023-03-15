@@ -40,8 +40,7 @@
                 <p class="title-explication">Explication</p>
                 <p class="explication">{{item.explication}}</p>
                 <hr>
-            </div>
-
+        </div>
         </div>
         <div class="answers_footer">
             <button class="quit" @click="$emit('btn_quit')">Exit Quiz</button>
@@ -73,8 +72,8 @@ export default {
     font-weight: bold;
     font-size: 22px;
 }
-.box_answers{
+.answers_body{
     overflow-y: scroll;
-    height: 40rem;
+    height: 25rem;
 }
 </style>
